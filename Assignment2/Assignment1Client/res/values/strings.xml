@@ -6,5 +6,7 @@
     <string name="search_title">Search</string>
     <string name="search_hint">Enter indgredients here</string>
     <string name="app_label">SearchSample</string>
+    <string name="title_activity_searchactivity">Searchactivity</string>
+    <string name="hello_world">Hello world!</string>
 
 </resources>
