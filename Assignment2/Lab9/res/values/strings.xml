@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Lab9</string>
+    <string name="buttonLabel">Get Area</string>
+    <string name="message">The result is</string>
+    <string name="label">Enter a radius</string>
+
+</resources>

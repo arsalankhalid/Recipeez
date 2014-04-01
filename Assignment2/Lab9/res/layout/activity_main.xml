@@ -1,0 +1,31 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity" >
+    
+        <TextView
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:text="@string/label" />
+    
+         <EditText
+            android:id="@+id/inputRadius"
+            android:inputType="numberDecimal"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content" />   
+   
+        <Button
+            android:id="@+id/sendButton"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:text="@string/buttonLabel" />
+    
+        <TextView
+        android:id="@+id/displayResult"
+        android:text="@string/message"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content" />              
+</LinearLayout>

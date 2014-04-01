@@ -1,0 +1,64 @@
+package btp400.assignment1client;
+
+import java.net.*;
+import java.io.*;
+
+import com.mysql.jdbc.Connection;
+import com.mysql.jdbc.Statement;
+
+public class Assignment2Server {
+	
+//	private Connection connect = null;
+//	private Statement statement = null; 
+	
+/*	public static void connection()
+	{
+		try {
+			Class.forName("com.mysql.jdbc.Driver");
+			System.out.println("Connected to the database");
+			
+		//	connect = DriverManager.getConnection("jdbc:mysql://locahost" + "");
+			
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}*/
+	
+	public static void main(String[] args)
+	{
+	//	connection();
+		ServerSocket serverSocket;
+		
+		try
+		{
+			serverSocket = new ServerSocket(8000);
+			System.out.println( "listening for a connection..." );
+			
+			Socket socketConnection = serverSocket.accept();
+			
+			ObjectOutputStream dosToClient = new ObjectOutputStream(socketConnection.getOutputStream());
+			
+			ObjectInputStream disFromClient = new ObjectInputStream(socketConnection.getInputStream());
+			
+			try
+			{
+				while(true)
+				{
+					String Reciepe = disFromClient.readUTF();
+				}
+			}
+			catch (EOFException eof)
+			{
+                System.out.println( "*** THE client has terminated connection ***" );
+			}
+			
+		}
+		catch (IOException e)
+		{
+		System.out.println("I/O error in data exchange");
+			e.printStackTrace();
+		}
+	}
+
+}

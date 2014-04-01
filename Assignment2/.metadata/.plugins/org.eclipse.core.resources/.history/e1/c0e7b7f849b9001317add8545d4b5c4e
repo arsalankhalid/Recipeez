@@ -1,0 +1,95 @@
+package btp400.assignment1client;
+
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.net.InetAddress;
+import java.net.Socket;
+
+import android.os.AsyncTask;
+import android.os.Build;
+import android.os.Bundle;
+import android.annotation.SuppressLint;
+import android.annotation.TargetApi;
+import android.app.Activity;
+import android.app.ListActivity;
+import android.app.SearchManager;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.View;
+import android.content.Context;
+import android.content.Intent;
+import android.database.sqlite.*;
+import android.app.ActionBar;
+import android.widget.AdapterView;
+import android.widget.ListView;
+import android.widget.RadioButton;
+import android.widget.SearchView;
+import android.widget.AdapterView.OnItemClickListener;
+
+public class MainActivity extends ListActivity {
+	
+	private Socket clientSocket;
+	private ObjectOutputStream dosToServer;
+	private ObjectInputStream  disFromServer;
+
+    @Override //create layout and iniate main activity 
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        //  handleIntent(getIntent());
+    //    new OpenConnectionTask().execute();
+    }
+    
+  public void onNetIntent(Intent intent)
+  {
+	  //So that the activity stacks back rather than create a new one, on top of the old one every time
+	  setIntent(intent);
+	  handleIntent(intent);
+  }
+  
+  public void onListItemClick(ListView l, View v, int Position, long id)
+  {
+	  //call detail activity for clicked entry
+  }
+  
+  public void handleIntent(Intent intent)
+  {
+      // Get the intent, verify the action and get the query
+      if (Intent.ACTION_SEARCH.equals(intent.getAction())) {
+        String query = intent.getStringExtra(SearchManager.QUERY);
+        doMySearch(query);}
+  }
+  
+  public void doMySearch(String query) {
+		// TODO Auto-generated method stub
+	}
+  
+	@Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+    	 MenuInflater inflater = getMenuInflater();
+    	    inflater.inflate(R.menu.main, menu);
+
+    	    return true;
+    }
+    
+ /*   private class OpenConnectionTask extends AsyncTask<Void, Void, Void>
+    {
+    	 @Override
+    	 protected Void doInBackground(Void... arg0)
+    	 {    		 
+    		 try {
+        		 clientSocket = new Socket(InetAddress.getByName("localhost"), 8000 );
+				dosToServer = new ObjectOutputStream(clientSocket.getOutputStream());
+				disFromServer = new ObjectInputStream( clientSocket.getInputStream());
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+    		 
+    		 return null;
+    	 }
+    	
+    }    */
+    
+}
