@@ -5,26 +5,18 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.net.InetAddress;
 import java.net.Socket;
-import java.util.Hashtable;
-import java.util.Map;
 
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.app.Activity;
-import android.app.SearchManager;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
-import android.view.View;
-import android.content.Intent;
 import android.database.sqlite.*;
 import android.app.ActionBar;
 import android.widget.AdapterView;
-import android.widget.Button;
 import android.widget.RadioButton;
 import android.widget.SearchView;
 import android.widget.AdapterView.OnItemClickListener;
-import android.widget.TextView;
 
 public class MainActivity extends Activity {
 	
@@ -36,16 +28,6 @@ public class MainActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-/*        Button bt = (Button) findViewById(R.id.searchView1);
-        bt.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View arg0) {
-				onSearchRequested();
-				
-			}
-		});*/
-        
-         
         
     //    new OpenConnectionTask().execute();
     }
